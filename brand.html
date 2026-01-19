@@ -1,0 +1,2525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Venuefy Brand Portfolio | Streamline Campus Life</title>
+  <meta name="description" content="Venuefy Brand Portfolio - The student-centric gateway to smarter university attendance. Digital-first attendance marking with QR, Nearby Share, and real-time dashboards.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    /* ========== CSS RESET & BASE ========== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      /* Core Brand Colors */
+      --background: hsl(216, 33%, 97%);
+      --foreground: hsl(220, 20%, 10%);
+      --card: hsl(0, 0%, 100%);
+      --card-foreground: hsl(220, 20%, 10%);
+      
+      /* Electric Blue - Primary */
+      --primary: hsl(216, 100%, 50%);
+      --primary-foreground: hsl(0, 0%, 100%);
+      
+      /* Fresh Green - Success/Attendance */
+      --secondary: hsl(150, 100%, 40%);
+      --secondary-foreground: hsl(0, 0%, 100%);
+      
+      /* Muted */
+      --muted: hsl(216, 20%, 92%);
+      --muted-foreground: hsl(220, 10%, 40%);
+      
+      /* Accent - Warm Orange */
+      --accent: hsl(35, 100%, 50%);
+      --accent-foreground: hsl(0, 0%, 100%);
+      
+      --border: hsl(216, 20%, 88%);
+      
+      /* Custom Brand Tokens */
+      --venuefy-dark: hsl(220, 20%, 10%);
+      
+      /* Gradients */
+      --gradient-hero: linear-gradient(135deg, hsl(216, 100%, 50%) 0%, hsl(200, 100%, 45%) 50%, hsl(150, 100%, 40%) 100%);
+      
+      /* Shadows */
+      --shadow-soft: 0 4px 20px -4px hsla(220, 20%, 10%, 0.08);
+      --shadow-card: 0 8px 40px -12px hsla(220, 20%, 10%, 0.12);
+      --shadow-elevated: 0 20px 60px -20px hsla(220, 20%, 10%, 0.2);
+      --shadow-glow: 0 0 60px -10px hsla(216, 100%, 50%, 0.4);
+      
+      --radius: 0.75rem;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--background);
+      color: var(--foreground);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.2;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ========== UTILITIES ========== */
+    .gradient-text {
+      background: var(--gradient-hero);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .glass-card {
+      background: hsla(0, 0%, 100%, 0.8);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid hsla(216, 20%, 88%, 0.5);
+      box-shadow: var(--shadow-card);
+    }
+
+    .section-padding {
+      padding: 5rem 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .section-padding {
+        padding: 8rem 3rem;
+      }
+    }
+
+    .max-w-6xl {
+      max-width: 72rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ========== ANIMATIONS ========== */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-100px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes glowPulse {
+      0%, 100% { opacity: 0.2; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.05); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+
+    @keyframes ping {
+      75%, 100% {
+        transform: scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    @keyframes countUp {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .animate-float-delayed {
+      animation: float 3s ease-in-out infinite;
+      animation-delay: 0.5s;
+    }
+
+    .animate-fade-in-up {
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    .animate-delay-1 { animation-delay: 0.1s; }
+    .animate-delay-2 { animation-delay: 0.2s; }
+    .animate-delay-3 { animation-delay: 0.3s; }
+    .animate-delay-4 { animation-delay: 0.4s; }
+    .animate-delay-5 { animation-delay: 0.5s; }
+    .animate-delay-6 { animation-delay: 0.6s; }
+
+    /* ========== NAVIGATION ========== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      transition: all 0.3s ease;
+      animation: slideDown 0.6s ease-out 0.5s both;
+    }
+
+    .nav.scrolled {
+      background: hsla(216, 33%, 97%, 0.8);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-container {
+      max-width: 72rem;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .nav-logo-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 0.75rem;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-logo-icon svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      color: var(--primary-foreground);
+    }
+
+    .nav-brand {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      display: none;
+    }
+
+    @media (min-width: 640px) {
+      .nav-brand {
+        display: block;
+      }
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .nav-links {
+        display: flex;
+      }
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--muted-foreground);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--foreground);
+    }
+
+    .nav-cta {
+      padding: 0.5rem 1.25rem;
+      border-radius: 9999px;
+      background: var(--primary);
+      color: var(--primary-foreground);
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .nav-cta:hover {
+      background: hsl(216, 100%, 45%);
+    }
+
+    /* ========== HERO SECTION ========== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      animation: glowPulse 6s ease-in-out infinite;
+    }
+
+    .hero-orb-1 {
+      top: 25%;
+      left: 25%;
+      width: 24rem;
+      height: 24rem;
+      background: hsla(216, 100%, 50%, 0.2);
+    }
+
+    .hero-orb-2 {
+      bottom: 25%;
+      right: 25%;
+      width: 20rem;
+      height: 20rem;
+      background: hsla(150, 100%, 40%, 0.2);
+      animation-delay: 1s;
+    }
+
+    .hero-orb-3 {
+      top: 50%;
+      right: 33%;
+      width: 16rem;
+      height: 16rem;
+      background: hsla(35, 100%, 50%, 0.1);
+      animation-delay: 0.5s;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 72rem;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+
+    .hero-logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 8rem;
+      height: 8rem;
+      border-radius: 1.5rem;
+      background: linear-gradient(135deg, var(--primary), hsla(216, 100%, 50%, 0.9), var(--secondary));
+      box-shadow: var(--shadow-glow);
+      margin-bottom: 2rem;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .hero-logo svg {
+      width: 4.5rem;
+      height: 4.5rem;
+      color: var(--primary-foreground);
+    }
+
+    .hero-title {
+      font-size: 4rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      animation: fadeInUp 0.8s ease-out 0.2s both;
+    }
+
+    @media (min-width: 768px) {
+      .hero-title {
+        font-size: 7rem;
+      }
+    }
+
+    .hero-tagline {
+      font-size: 1.25rem;
+      color: var(--muted-foreground);
+      font-weight: 500;
+      max-width: 42rem;
+      margin: 0 auto 3rem;
+      animation: fadeInUp 0.8s ease-out 0.4s both;
+    }
+
+    @media (min-width: 768px) {
+      .hero-tagline {
+        font-size: 1.5rem;
+      }
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 4rem;
+      animation: fadeInUp 0.8s ease-out 0.6s both;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.625rem 1.25rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    .hero-pill.primary {
+      background: hsla(216, 100%, 50%, 0.1);
+      color: var(--primary);
+    }
+
+    .hero-pill.secondary {
+      background: hsla(150, 100%, 40%, 0.1);
+      color: var(--secondary);
+    }
+
+    .hero-pill.accent {
+      background: hsla(35, 100%, 50%, 0.1);
+      color: var(--accent);
+    }
+
+    .hero-pill i {
+      width: 1rem;
+      height: 1rem;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 3rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--muted-foreground);
+      animation: fadeIn 1s ease-out 1s both;
+    }
+
+    .hero-scroll span {
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+
+    .hero-scroll-indicator {
+      width: 1.5rem;
+      height: 2.5rem;
+      border-radius: 9999px;
+      border: 2px solid currentColor;
+      display: flex;
+      justify-content: center;
+      padding-top: 0.5rem;
+      animation: bounce 1.5s infinite;
+    }
+
+    .hero-scroll-dot {
+      width: 0.375rem;
+      height: 0.75rem;
+      border-radius: 9999px;
+      background: currentColor;
+    }
+
+    /* ========== COLOR PALETTE SECTION ========== */
+    .colors-section {
+      background: var(--card);
+    }
+
+    .section-header {
+      margin-bottom: 4rem;
+    }
+
+    .section-badge {
+      display: inline-block;
+      padding: 0.375rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+
+    .section-badge.primary {
+      background: hsla(216, 100%, 50%, 0.1);
+      color: var(--primary);
+    }
+
+    .section-badge.secondary {
+      background: hsla(150, 100%, 40%, 0.1);
+      color: var(--secondary);
+    }
+
+    .section-badge.accent {
+      background: hsla(35, 100%, 50%, 0.1);
+      color: var(--accent);
+    }
+
+    .section-title {
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--foreground);
+      margin-bottom: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .section-title {
+        font-size: 3rem;
+      }
+    }
+
+    .section-desc {
+      font-size: 1.125rem;
+      color: var(--muted-foreground);
+      max-width: 42rem;
+    }
+
+    .colors-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .colors-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .color-card {
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .color-card:hover {
+      transform: scale(1.05);
+    }
+
+    .color-swatch {
+      position: relative;
+      height: 12rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+      transition: box-shadow 0.3s;
+    }
+
+    @media (min-width: 768px) {
+      .color-swatch {
+        height: 16rem;
+      }
+    }
+
+    .color-card:hover .color-swatch {
+      box-shadow: var(--shadow-elevated);
+    }
+
+    .color-swatch.primary { background: var(--primary); }
+    .color-swatch.secondary { background: var(--secondary); }
+    .color-swatch.accent { background: var(--accent); }
+    .color-swatch.gray { 
+      background: var(--background);
+      border: 2px solid var(--border);
+    }
+
+    .color-copy {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+      padding: 0.375rem 0.75rem;
+      border-radius: 9999px;
+      background: hsla(220, 20%, 10%, 0.1);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: white;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .color-swatch.gray .color-copy {
+      color: var(--foreground);
+    }
+
+    .color-card:hover .color-copy {
+      opacity: 1;
+    }
+
+    .color-info {
+      margin-top: 1rem;
+    }
+
+    .color-name {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--foreground);
+    }
+
+    .color-usage {
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+    }
+
+    .color-codes {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 0.25rem;
+      font-size: 0.875rem;
+      font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+    }
+
+    .color-hex {
+      color: var(--foreground);
+    }
+
+    .color-hsl {
+      color: var(--muted-foreground);
+    }
+
+    .gradient-preview {
+      margin-top: 3rem;
+    }
+
+    .gradient-preview h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--foreground);
+      margin-bottom: 1rem;
+    }
+
+    .gradient-bar {
+      height: 6rem;
+      border-radius: 1rem;
+      background: linear-gradient(135deg, var(--primary), hsla(216, 100%, 60%, 1), var(--secondary));
+      box-shadow: var(--shadow-card);
+    }
+
+    @media (min-width: 768px) {
+      .gradient-bar {
+        height: 8rem;
+      }
+    }
+
+    .gradient-code {
+      margin-top: 0.75rem;
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+      font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+    }
+
+    /* ========== TYPOGRAPHY SECTION ========== */
+    .typography-grid {
+      display: grid;
+      gap: 3rem;
+    }
+
+    @media (min-width: 768px) {
+      .typography-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5rem;
+      }
+    }
+
+    .type-showcase {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .type-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--muted-foreground);
+      margin-bottom: 1.5rem;
+    }
+
+    .type-card {
+      padding: 2rem;
+    }
+
+    .type-sample {
+      font-size: 6rem;
+      font-weight: 900;
+    }
+
+    @media (min-width: 768px) {
+      .type-sample {
+        font-size: 8rem;
+      }
+    }
+
+    .type-sample.display {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .type-sample.body {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      color: var(--foreground);
+    }
+
+    .type-name {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: var(--foreground);
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .type-desc {
+      color: var(--muted-foreground);
+    }
+
+    .type-scale {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .type-scale-item {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .type-scale-item.h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3rem;
+      font-weight: 900;
+    }
+
+    .type-scale-item.h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 700;
+    }
+
+    .type-scale-item.h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .type-scale-item.body-lg {
+      font-size: 1.125rem;
+      font-weight: 600;
+    }
+
+    .type-scale-item.body {
+      font-size: 1rem;
+    }
+
+    .type-scale-item.caption {
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+    }
+
+    .type-scale-meta {
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+      font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+    }
+
+    .type-context {
+      margin-top: 5rem;
+      padding: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .type-context {
+        padding: 3rem;
+      }
+    }
+
+    .type-context-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--foreground);
+      margin-bottom: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .type-context-title {
+        font-size: 3rem;
+      }
+    }
+
+    .type-context-body {
+      font-size: 1.125rem;
+      color: var(--muted-foreground);
+      max-width: 48rem;
+      line-height: 1.7;
+    }
+
+    .type-context-btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      background: var(--primary);
+      color: var(--primary-foreground);
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .type-context-btn:hover {
+      background: hsl(216, 100%, 45%);
+    }
+
+    /* ========== LOGO SECTION ========== */
+    .logo-section {
+      background: var(--card);
+    }
+
+    .logo-grid {
+      display: grid;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (min-width: 768px) {
+      .logo-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .logo-card {
+      border-radius: 1rem;
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 18rem;
+    }
+
+    .logo-card.light {
+      background: var(--card);
+      border: 1px solid var(--border);
+    }
+
+    .logo-card.dark {
+      background: var(--venuefy-dark);
+    }
+
+    .logo-lockup {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo-icon-lg {
+      width: 5rem;
+      height: 5rem;
+      border-radius: 1rem;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-icon-lg svg {
+      width: 3rem;
+      height: 3rem;
+      color: var(--primary-foreground);
+    }
+
+    .logo-wordmark {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 900;
+    }
+
+    .logo-card.light .logo-wordmark {
+      background: var(--gradient-hero);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .logo-card.dark .logo-wordmark {
+      color: white;
+    }
+
+    .logo-label {
+      margin-top: 1.5rem;
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+    }
+
+    .logo-card.dark .logo-label {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .logo-variations-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--foreground);
+      margin-bottom: 1.5rem;
+    }
+
+    .logo-variations-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .logo-variations-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .logo-variation {
+      aspect-ratio: 1;
+      border-radius: 0.75rem;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-variation-icon {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-variation-icon.gradient {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+    }
+
+    .logo-variation-icon.mono {
+      border: 2px solid var(--foreground);
+    }
+
+    .logo-variation-icon.glow {
+      background: linear-gradient(135deg, var(--primary), hsla(216, 100%, 50%, 0.9), var(--secondary));
+      border-radius: 28%;
+      box-shadow: var(--shadow-glow);
+    }
+
+    .logo-variation-icon svg {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+
+    .logo-variation-icon.gradient svg,
+    .logo-variation-icon.glow svg {
+      color: var(--primary-foreground);
+    }
+
+    .logo-variation-icon.mono svg {
+      color: var(--foreground);
+    }
+
+    .logo-variation-label {
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      color: var(--muted-foreground);
+    }
+
+    .logo-compact {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo-compact-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 0.75rem;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-compact-icon svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      color: var(--primary-foreground);
+    }
+
+    .logo-compact-letter {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .logo-clearspace {
+      margin-top: 3rem;
+      padding: 2rem;
+    }
+
+    .logo-clearspace h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--foreground);
+      margin-bottom: 1rem;
+    }
+
+    .logo-clearspace p {
+      color: var(--muted-foreground);
+      margin-bottom: 1.5rem;
+    }
+
+    .logo-clearspace-demo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      border: 2px dashed var(--border);
+      border-radius: 0.75rem;
+    }
+
+    .logo-clearspace-box {
+      padding: 2rem;
+      border: 2px solid hsla(216, 100%, 50%, 0.3);
+      border-radius: 0.75rem;
+    }
+
+    .logo-clearspace-lockup {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo-clearspace-icon {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 0.75rem;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-clearspace-icon svg {
+      width: 2rem;
+      height: 2rem;
+      color: var(--primary-foreground);
+    }
+
+    .logo-clearspace-text {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.875rem;
+      font-weight: 900;
+    }
+
+    /* ========== METRICS SECTION ========== */
+    .metrics-section .section-header {
+      text-align: center;
+    }
+
+    .metrics-section .section-desc {
+      margin: 0 auto;
+    }
+
+    .metrics-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .metrics-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .metric-card {
+      position: relative;
+      padding: 2rem;
+      border-radius: 1rem;
+      transition: box-shadow 0.3s;
+    }
+
+    .metric-card:hover {
+      box-shadow: var(--shadow-elevated);
+    }
+
+    .metric-icon {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 0.75rem;
+      background: hsla(216, 100%, 50%, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      transition: transform 0.3s;
+    }
+
+    .metric-card:hover .metric-icon {
+      transform: scale(1.1);
+    }
+
+    .metric-value {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .metric-value {
+        font-size: 3.5rem;
+      }
+    }
+
+    .metric-label {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--foreground);
+      margin-bottom: 0.5rem;
+    }
+
+    .metric-desc {
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+    }
+
+    /* ========== ASSETS SECTION ========== */
+    .assets-section {
+      background: var(--card);
+    }
+
+    .assets-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .assets-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .asset-card {
+      padding: 2rem;
+      border-radius: 1rem;
+      transition: box-shadow 0.3s;
+    }
+
+    .asset-card:hover {
+      box-shadow: var(--shadow-elevated);
+    }
+
+    .asset-icon {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      transition: transform 0.3s;
+    }
+
+    .asset-card:hover .asset-icon {
+      transform: scale(1.1);
+    }
+
+    .asset-icon.primary {
+      background: hsla(216, 100%, 50%, 0.1);
+      color: var(--primary);
+    }
+
+    .asset-icon.secondary {
+      background: hsla(150, 100%, 40%, 0.1);
+      color: var(--secondary);
+    }
+
+    .asset-icon.accent {
+      background: hsla(35, 100%, 50%, 0.1);
+      color: var(--accent);
+    }
+
+    .asset-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--foreground);
+      margin-bottom: 0.75rem;
+    }
+
+    .asset-desc {
+      color: var(--muted-foreground);
+      line-height: 1.7;
+    }
+
+    .asset-preview {
+      margin-top: 1.5rem;
+      height: 8rem;
+      border-radius: 0.75rem;
+      opacity: 0.2;
+      transition: opacity 0.3s;
+    }
+
+    .asset-card:hover .asset-preview {
+      opacity: 0.3;
+    }
+
+    .asset-preview.primary {
+      background: linear-gradient(135deg, var(--primary), hsla(216, 100%, 50%, 0.6));
+    }
+
+    .asset-preview.secondary {
+      background: linear-gradient(135deg, var(--secondary), hsla(150, 100%, 40%, 0.6));
+    }
+
+    .asset-preview.accent {
+      background: linear-gradient(135deg, var(--accent), hsla(35, 100%, 50%, 0.6));
+    }
+
+    /* ========== VALUE PROPOSITION SECTION ========== */
+    .value-grid {
+      display: grid;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media (min-width: 1024px) {
+      .value-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5rem;
+      }
+    }
+
+    .value-content .section-title {
+      line-height: 1.2;
+    }
+
+    .value-content .section-desc {
+      margin-bottom: 2rem;
+    }
+
+    .value-features {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .value-feature {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .value-feature-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 0.75rem;
+      background: hsla(216, 100%, 50%, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .value-feature-text {
+      font-weight: 500;
+      color: var(--foreground);
+    }
+
+    .value-visual {
+      position: relative;
+      max-width: 28rem;
+      margin: 0 auto;
+    }
+
+    .value-visual-glow {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, hsla(216, 100%, 50%, 0.2), hsla(150, 100%, 40%, 0.1), hsla(35, 100%, 50%, 0.2));
+      border-radius: 1.5rem;
+      filter: blur(60px);
+    }
+
+    .value-visual-card {
+      position: relative;
+      aspect-ratio: 1;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .phone-mockup {
+      width: 12rem;
+      height: 20rem;
+      background: var(--venuefy-dark);
+      border-radius: 2.5rem;
+      padding: 0.75rem;
+      box-shadow: var(--shadow-elevated);
+    }
+
+    .phone-screen {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, var(--primary), hsla(216, 100%, 50%, 0.8), var(--secondary));
+      border-radius: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .phone-qr {
+      width: 5rem;
+      height: 5rem;
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .phone-qr-grid {
+      width: 3rem;
+      height: 3rem;
+      border: 2px solid white;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      padding: 2px;
+    }
+
+    .phone-qr-cell {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .phone-text {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .phone-ping {
+      position: absolute;
+      inset: 2rem;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      animation: ping 2s infinite;
+    }
+
+    .floating-badge {
+      position: absolute;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      box-shadow: var(--shadow-card);
+    }
+
+    .floating-badge.present {
+      top: 3rem;
+      right: 2rem;
+      background: var(--secondary);
+      color: var(--secondary-foreground);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .floating-badge.streak {
+      bottom: 4rem;
+      left: 2rem;
+      background: var(--accent);
+      color: var(--accent-foreground);
+      animation: float 3s ease-in-out infinite 0.5s;
+    }
+
+    /* ========== TARGET AUDIENCE SECTION ========== */
+    .audience-section {
+      background: var(--venuefy-dark);
+      color: white;
+    }
+
+    .audience-section .section-header {
+      text-align: center;
+    }
+
+    .audience-section .section-badge {
+      background: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .audience-section .section-desc {
+      color: rgba(255, 255, 255, 0.6);
+      margin: 0 auto;
+    }
+
+    .audience-grid {
+      display: grid;
+      gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .audience-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .audience-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 1rem;
+      padding: 2rem;
+      transition: background 0.3s;
+    }
+
+    .audience-card:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .audience-icon {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 1rem;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      transition: transform 0.3s;
+    }
+
+    .audience-card:hover .audience-icon {
+      transform: scale(1.1);
+    }
+
+    .audience-icon i {
+      width: 1.75rem;
+      height: 1.75rem;
+      color: white;
+    }
+
+    .audience-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .audience-age {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 1.5rem;
+    }
+
+    .audience-traits {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .audience-traits li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .audience-traits li::before {
+      content: '';
+      width: 0.375rem;
+      height: 0.375rem;
+      border-radius: 50%;
+      background: var(--secondary);
+    }
+
+    /* ========== BRAND PERSONALITY SECTION ========== */
+    .personality-section {
+      background: var(--card);
+    }
+
+    .personality-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .personality-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .personality-card {
+      padding: 2rem;
+      border-radius: 1rem;
+      transition: box-shadow 0.3s;
+    }
+
+    .personality-card:hover {
+      box-shadow: var(--shadow-elevated);
+    }
+
+    .personality-content {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+
+    .personality-number {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 900;
+      opacity: 0.2;
+      transition: opacity 0.3s;
+    }
+
+    .personality-card:hover .personality-number {
+      opacity: 0.4;
+    }
+
+    .personality-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--foreground);
+      margin-bottom: 0.5rem;
+    }
+
+    .personality-desc {
+      color: var(--muted-foreground);
+      line-height: 1.7;
+    }
+
+    /* ========== PLATFORM SECTION ========== */
+    .platform-section .section-header {
+      text-align: center;
+    }
+
+    .platform-section .section-desc {
+      margin: 0 auto;
+    }
+
+    .platform-grid {
+      display: grid;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (min-width: 768px) {
+      .platform-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .platform-card {
+      padding: 2rem;
+      border-radius: 1rem;
+      text-align: center;
+      transition: box-shadow 0.3s;
+    }
+
+    .platform-card:hover {
+      box-shadow: var(--shadow-elevated);
+    }
+
+    .platform-icon {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 1rem;
+      background: hsla(216, 100%, 50%, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      margin: 0 auto 1rem;
+    }
+
+    .platform-label {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--foreground);
+      margin-bottom: 0.25rem;
+    }
+
+    .platform-subtitle {
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+    }
+
+    .platform-deploy {
+      padding: 2rem;
+      border-radius: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .platform-deploy {
+        padding: 3rem;
+      }
+    }
+
+    .platform-deploy-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .platform-deploy-content {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    .platform-deploy-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .platform-deploy-icon {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 1rem;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .platform-deploy-icon i {
+      width: 1.75rem;
+      height: 1.75rem;
+      color: white;
+    }
+
+    .platform-deploy-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--foreground);
+    }
+
+    .platform-deploy-sub {
+      color: var(--muted-foreground);
+    }
+
+    .platform-deploy-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      background: var(--primary);
+      color: var(--primary-foreground);
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .platform-deploy-link:hover {
+      background: hsl(216, 100%, 45%);
+    }
+
+    /* ========== FOOTER ========== */
+    .footer {
+      background: var(--venuefy-dark);
+      color: white;
+    }
+
+    .footer-content {
+      text-align: center;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-logo-icon {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 1rem;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer-logo-icon svg {
+      width: 2.5rem;
+      height: 2.5rem;
+      color: var(--primary-foreground);
+    }
+
+    .footer-brand {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 900;
+    }
+
+    .footer-tagline {
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 2rem;
+    }
+
+    .footer-positioning {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 3rem;
+    }
+
+    .footer-divider {
+      width: 100%;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.1);
+      margin-bottom: 2rem;
+    }
+
+    .footer-copyright {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* ========== SCROLL ANIMATIONS ========== */
+    .scroll-animate {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .scroll-animate.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .scroll-animate-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .scroll-animate-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .scroll-animate-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .scroll-animate-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <div class="nav-logo-icon">
+          <svg viewBox="0 0 72 72" fill="none">
+            <path d="M16 20L36 52L56 20" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M28 36L34 42L46 30" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+          </svg>
+        </div>
+        <span class="nav-brand gradient-text">Venuefy</span>
+      </a>
+      <div class="nav-links">
+        <a href="#colors">Colors</a>
+        <a href="#typography">Type</a>
+        <a href="#logo">Logo</a>
+        <a href="#metrics">Metrics</a>
+        <a href="#platform">Platform</a>
+      </div>
+      <a href="https://jkuat.venuefy.top" target="_blank" rel="noopener noreferrer" class="nav-cta">View App</a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <div class="hero-orb hero-orb-3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-logo">
+        <svg viewBox="0 0 72 72" fill="none">
+          <path d="M16 20L36 52L56 20" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M28 36L34 42L46 30" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+          <rect x="44" y="12" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+          <line x1="48" y1="16" x2="48" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+          <line x1="56" y1="16" x2="56" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+        </svg>
+      </div>
+      <h1 class="hero-title"><span class="gradient-text">Venuefy</span></h1>
+      <p class="hero-tagline">Streamline campus life — attend smarter, track effortlessly.</p>
+      <div class="hero-pills">
+        <span class="hero-pill primary">
+          <i data-lucide="qr-code"></i>
+          EdTech
+        </span>
+        <span class="hero-pill secondary">
+          <i data-lucide="check-circle"></i>
+          Attendance Management
+        </span>
+        <span class="hero-pill accent">
+          <i data-lucide="calendar"></i>
+          Venue Tracking
+        </span>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Explore Brand</span>
+      <div class="hero-scroll-indicator">
+        <div class="hero-scroll-dot"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLOR PALETTE SECTION -->
+  <section class="colors-section section-padding" id="colors">
+    <div class="max-w-6xl">
+      <div class="section-header scroll-animate">
+        <span class="section-badge primary">Color Palette</span>
+        <h2 class="section-title">Campus Energy, Digitized</h2>
+        <p class="section-desc">Our colors capture the vibrant, dynamic spirit of university life — energetic blues for trust and innovation, fresh greens for success, and warm orange for important moments.</p>
+      </div>
+      <div class="colors-grid">
+        <div class="color-card scroll-animate" onclick="copyColor('#0066FF')">
+          <div class="color-swatch primary">
+            <div class="color-copy"><i data-lucide="copy"></i> Copy</div>
+          </div>
+          <div class="color-info">
+            <h3 class="color-name">Electric Blue</h3>
+            <p class="color-usage">Primary / Brand Identity</p>
+            <div class="color-codes">
+              <span class="color-hex">#0066FF</span>
+              <span class="color-hsl">HSL(216, 100%, 50%)</span>
+            </div>
+          </div>
+        </div>
+        <div class="color-card scroll-animate" style="transition-delay: 0.1s" onclick="copyColor('#00CC66')">
+          <div class="color-swatch secondary">
+            <div class="color-copy"><i data-lucide="copy"></i> Copy</div>
+          </div>
+          <div class="color-info">
+            <h3 class="color-name">Fresh Green</h3>
+            <p class="color-usage">Success / Attendance Confirmed</p>
+            <div class="color-codes">
+              <span class="color-hex">#00CC66</span>
+              <span class="color-hsl">HSL(150, 100%, 40%)</span>
+            </div>
+          </div>
+        </div>
+        <div class="color-card scroll-animate" style="transition-delay: 0.2s" onclick="copyColor('#FF9500')">
+          <div class="color-swatch accent">
+            <div class="color-copy"><i data-lucide="copy"></i> Copy</div>
+          </div>
+          <div class="color-info">
+            <h3 class="color-name">Warm Orange</h3>
+            <p class="color-usage">Alerts / Notifications</p>
+            <div class="color-codes">
+              <span class="color-hex">#FF9500</span>
+              <span class="color-hsl">HSL(35, 100%, 50%)</span>
+            </div>
+          </div>
+        </div>
+        <div class="color-card scroll-animate" style="transition-delay: 0.3s" onclick="copyColor('#F5F7FA')">
+          <div class="color-swatch gray">
+            <div class="color-copy"><i data-lucide="copy"></i> Copy</div>
+          </div>
+          <div class="color-info">
+            <h3 class="color-name">Neutral Gray</h3>
+            <p class="color-usage">Backgrounds / Surfaces</p>
+            <div class="color-codes">
+              <span class="color-hex">#F5F7FA</span>
+              <span class="color-hsl">HSL(216, 33%, 97%)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gradient-preview scroll-animate">
+        <h3>Brand Gradient</h3>
+        <div class="gradient-bar"></div>
+        <p class="gradient-code">linear-gradient(135deg, #0066FF 0%, #0099FF 50%, #00CC66 100%)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPOGRAPHY SECTION -->
+  <section class="section-padding" id="typography">
+    <div class="max-w-6xl">
+      <div class="section-header scroll-animate">
+        <span class="section-badge secondary">Typography</span>
+        <h2 class="section-title">Clear. Bold. Mobile-First.</h2>
+        <p class="section-desc">Our type system prioritizes readability on mobile devices while maintaining a bold, confident presence for headlines.</p>
+      </div>
+      <div class="typography-grid">
+        <div class="type-showcase scroll-animate-left">
+          <div>
+            <p class="type-label">Display / Headlines</p>
+            <div class="type-card glass-card">
+              <span class="type-sample display gradient-text">Aa</span>
+              <h4 class="type-name">Poppins</h4>
+              <p class="type-desc">Bold, geometric sans-serif for impactful headlines and branding moments.</p>
+            </div>
+          </div>
+          <div class="type-scale">
+            <div class="type-scale-item h1">
+              <span>Heading 1</span>
+              <span class="type-scale-meta">Black / 48px</span>
+            </div>
+            <div class="type-scale-item h2">
+              <span>Heading 2</span>
+              <span class="type-scale-meta">Bold / 36px</span>
+            </div>
+            <div class="type-scale-item h3">
+              <span>Heading 3</span>
+              <span class="type-scale-meta">Semi / 24px</span>
+            </div>
+          </div>
+        </div>
+        <div class="type-showcase scroll-animate-right">
+          <div>
+            <p class="type-label">Body / Interface</p>
+            <div class="type-card glass-card">
+              <span class="type-sample body">Aa</span>
+              <h4 class="type-name">Inter</h4>
+              <p class="type-desc">Clean, highly legible sans-serif optimized for screens and user interfaces.</p>
+            </div>
+          </div>
+          <div class="type-scale">
+            <div class="type-scale-item body-lg">
+              <span>Body Large</span>
+              <span class="type-scale-meta">Semi / 18px</span>
+            </div>
+            <div class="type-scale-item body">
+              <span>Body Regular</span>
+              <span class="type-scale-meta">Regular / 16px</span>
+            </div>
+            <div class="type-scale-item caption">
+              <span>Caption / Meta</span>
+              <span class="type-scale-meta">Regular / 14px</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="type-context glass-card scroll-animate">
+        <p class="type-label">In Context</p>
+        <h4 class="type-context-title">Never miss a class again.</h4>
+        <p class="type-context-body">Track your attendance streaks, get real-time notifications, and stay on top of your academic commitments with our intelligent campus companion.</p>
+        <a href="#" class="type-context-btn">Get Started</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGO SECTION -->
+  <section class="logo-section section-padding" id="logo">
+    <div class="max-w-6xl">
+      <div class="section-header scroll-animate">
+        <span class="section-badge accent">Logo System</span>
+        <h2 class="section-title">The Venuefy Mark</h2>
+        <p class="section-desc">A stylized "V" merging a checkmark and calendar grid — symbolizing attendance verification and schedule management. Designed for scalability across all touchpoints.</p>
+      </div>
+      <div class="logo-grid scroll-animate">
+        <div class="logo-card light glass-card">
+          <div class="logo-lockup">
+            <div class="logo-icon-lg">
+              <svg viewBox="0 0 72 72" fill="none">
+                <path d="M16 20L36 52L56 20" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M28 36L34 42L46 30" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+                <rect x="44" y="12" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+                <line x1="48" y1="16" x2="48" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+                <line x1="56" y1="16" x2="56" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+              </svg>
+            </div>
+            <span class="logo-wordmark">Venuefy</span>
+          </div>
+          <span class="logo-label">Primary / Light Background</span>
+        </div>
+        <div class="logo-card dark">
+          <div class="logo-lockup">
+            <div class="logo-icon-lg">
+              <svg viewBox="0 0 72 72" fill="none">
+                <path d="M16 20L36 52L56 20" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M28 36L34 42L46 30" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+                <rect x="44" y="12" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+                <line x1="48" y1="16" x2="48" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+                <line x1="56" y1="16" x2="56" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+              </svg>
+            </div>
+            <span class="logo-wordmark">Venuefy</span>
+          </div>
+          <span class="logo-label">Primary / Dark Background</span>
+        </div>
+      </div>
+      <h3 class="logo-variations-title scroll-animate">Logo Variations</h3>
+      <div class="logo-variations-grid scroll-animate">
+        <div class="logo-variation glass-card">
+          <div class="logo-variation-icon gradient">
+            <svg viewBox="0 0 72 72" fill="none">
+              <path d="M16 20L36 52L56 20" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M28 36L34 42L46 30" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+              <rect x="44" y="12" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+              <line x1="48" y1="16" x2="48" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+              <line x1="56" y1="16" x2="56" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+            </svg>
+          </div>
+          <span class="logo-variation-label">Icon Only</span>
+        </div>
+        <div class="logo-variation glass-card">
+          <div class="logo-variation-icon mono">
+            <svg viewBox="0 0 72 72" fill="none">
+              <path d="M16 20L36 52L56 20" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M28 36L34 42L46 30" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+              <rect x="44" y="12" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+              <line x1="48" y1="16" x2="48" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+              <line x1="56" y1="16" x2="56" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+            </svg>
+          </div>
+          <span class="logo-variation-label">Monochrome</span>
+        </div>
+        <div class="logo-variation glass-card">
+          <div class="logo-compact">
+            <div class="logo-compact-icon">
+              <svg viewBox="0 0 72 72" fill="none">
+                <path d="M16 20L36 52L56 20" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M28 36L34 42L46 30" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+              </svg>
+            </div>
+            <span class="logo-compact-letter gradient-text">V</span>
+          </div>
+          <span class="logo-variation-label">Compact</span>
+        </div>
+        <div class="logo-variation glass-card">
+          <div class="logo-variation-icon glow">
+            <svg viewBox="0 0 72 72" fill="none">
+              <path d="M16 20L36 52L56 20" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M28 36L34 42L46 30" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+              <rect x="44" y="12" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+              <line x1="48" y1="16" x2="48" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+              <line x1="56" y1="16" x2="56" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+            </svg>
+          </div>
+          <span class="logo-variation-label">App Icon</span>
+        </div>
+      </div>
+      <div class="logo-clearspace glass-card scroll-animate">
+        <h3>Clear Space</h3>
+        <p>Maintain minimum clear space equal to the height of the "V" in the wordmark around all sides of the logo.</p>
+        <div class="logo-clearspace-demo">
+          <div class="logo-clearspace-box">
+            <div class="logo-clearspace-lockup">
+              <div class="logo-clearspace-icon">
+                <svg viewBox="0 0 72 72" fill="none">
+                  <path d="M16 20L36 52L56 20" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M28 36L34 42L46 30" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+                  <rect x="44" y="12" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+                  <line x1="48" y1="16" x2="48" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+                  <line x1="56" y1="16" x2="56" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+                </svg>
+              </div>
+              <span class="logo-clearspace-text gradient-text">Venuefy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METRICS SECTION -->
+  <section class="metrics-section section-padding" id="metrics">
+    <div class="max-w-6xl">
+      <div class="section-header scroll-animate">
+        <span class="section-badge secondary">Proven Impact</span>
+        <h2 class="section-title">Numbers That Matter</h2>
+        <p class="section-desc">Real results from university pilot deployments demonstrating Venuefy's transformative impact on campus attendance management.</p>
+      </div>
+      <div class="metrics-grid">
+        <div class="metric-card glass-card scroll-animate">
+          <div class="metric-icon"><i data-lucide="timer"></i></div>
+          <div class="metric-value gradient-text" data-count="85">0</div>
+          <h3 class="metric-label">Faster Attendance</h3>
+          <p class="metric-desc">Time saved vs. manual paper registers</p>
+        </div>
+        <div class="metric-card glass-card scroll-animate" style="transition-delay: 0.1s">
+          <div class="metric-icon"><i data-lucide="users"></i></div>
+          <div class="metric-value gradient-text" data-count="92">0</div>
+          <h3 class="metric-label">Student Adoption</h3>
+          <p class="metric-desc">In pilot university deployments</p>
+        </div>
+        <div class="metric-card glass-card scroll-animate" style="transition-delay: 0.2s">
+          <div class="metric-icon"><i data-lucide="shield"></i></div>
+          <div class="metric-value gradient-text">Zero</div>
+          <h3 class="metric-label">Disputes</h3>
+          <p class="metric-desc">Verifiable timestamps eliminate conflicts</p>
+        </div>
+        <div class="metric-card glass-card scroll-animate" style="transition-delay: 0.3s">
+          <div class="metric-icon"><i data-lucide="zap"></i></div>
+          <div class="metric-value gradient-text" data-count="3" data-suffix="sec">0</div>
+          <h3 class="metric-label">Check-in Time</h3>
+          <p class="metric-desc">Average time to mark attendance</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY ASSETS SECTION -->
+  <section class="assets-section section-padding" id="assets">
+    <div class="max-w-6xl">
+      <div class="section-header scroll-animate">
+        <span class="section-badge primary">Key Visual Assets</span>
+        <h2 class="section-title">Signature UI Elements</h2>
+        <p class="section-desc">Distinctive interface components that define the Venuefy experience — each designed for instant recognition and delightful interaction.</p>
+      </div>
+      <div class="assets-grid">
+        <div class="asset-card glass-card scroll-animate">
+          <div class="asset-icon primary"><i data-lucide="qr-code"></i></div>
+          <h3 class="asset-title">Animated QR Scanner</h3>
+          <p class="asset-desc">Dynamic scanning interface with real-time feedback and success animations for seamless check-ins.</p>
+          <div class="asset-preview primary"></div>
+        </div>
+        <div class="asset-card glass-card scroll-animate" style="transition-delay: 0.1s">
+          <div class="asset-icon secondary"><i data-lucide="trending-up"></i></div>
+          <h3 class="asset-title">Streak Progress Rings</h3>
+          <p class="asset-desc">Gamified attendance visualization with circular progress indicators and milestone celebrations.</p>
+          <div class="asset-preview secondary"></div>
+        </div>
+        <div class="asset-card glass-card scroll-animate" style="transition-delay: 0.2s">
+          <div class="asset-icon accent"><i data-lucide="flame"></i></div>
+          <h3 class="asset-title">Venue Heatmaps</h3>
+          <p class="asset-desc">Real-time 'hotness' indicators showing popular venues and optimal times for class attendance.</p>
+          <div class="asset-preview accent"></div>
+        </div>
+        <div class="asset-card glass-card scroll-animate" style="transition-delay: 0.3s">
+          <div class="asset-icon primary"><i data-lucide="camera"></i></div>
+          <h3 class="asset-title">Live Snaps Feed</h3>
+          <p class="asset-desc">Social proof through timestamped venue photos creating authentic attendance documentation.</p>
+          <div class="asset-preview primary"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE PROPOSITION SECTION -->
+  <section class="section-padding" id="proposition">
+    <div class="max-w-6xl">
+      <div class="value-grid">
+        <div class="value-content scroll-animate-left">
+          <span class="section-badge accent">Core Value</span>
+          <h2 class="section-title">Digital-first attendance for the <span class="gradient-text">modern campus</span></h2>
+          <p class="section-desc">Venuefy transforms attendance from a tedious administrative task into an engaging, transparent experience. QR scanning, Nearby Share, and manual options ensure no student is left behind — while real-time dashboards keep everyone informed.</p>
+          <div class="value-features">
+            <div class="value-feature">
+              <div class="value-feature-icon"><i data-lucide="zap"></i></div>
+              <span class="value-feature-text">Fraud-proof with verifiable timestamps</span>
+            </div>
+            <div class="value-feature">
+              <div class="value-feature-icon"><i data-lucide="smartphone"></i></div>
+              <span class="value-feature-text">Multiple check-in methods for inclusivity</span>
+            </div>
+            <div class="value-feature">
+              <div class="value-feature-icon"><i data-lucide="globe"></i></div>
+              <span class="value-feature-text">Cross-platform: iOS, Android, and Web</span>
+            </div>
+          </div>
+        </div>
+        <div class="value-visual scroll-animate-right">
+          <div class="value-visual-glow"></div>
+          <div class="value-visual-card glass-card">
+            <div class="phone-mockup">
+              <div class="phone-screen">
+                <div class="phone-qr">
+                  <div class="phone-qr-grid">
+                    <div class="phone-qr-cell"></div>
+                    <div class="phone-qr-cell"></div>
+                    <div class="phone-qr-cell"></div>
+                    <div class="phone-qr-cell"></div>
+                    <div class="phone-qr-cell"></div>
+                    <div class="phone-qr-cell"></div>
+                    <div class="phone-qr-cell"></div>
+                    <div class="phone-qr-cell"></div>
+                    <div class="phone-qr-cell"></div>
+                  </div>
+                </div>
+                <span class="phone-text">Scan to Check In</span>
+                <div class="phone-ping"></div>
+              </div>
+            </div>
+            <div class="floating-badge present">✓ Present</div>
+            <div class="floating-badge streak">🔥 5 Day Streak</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TARGET AUDIENCE SECTION -->
+  <section class="audience-section section-padding" id="audience">
+    <div class="max-w-6xl">
+      <div class="section-header scroll-animate">
+        <span class="section-badge">Target Audience</span>
+        <h2 class="section-title">Built for <span class="gradient-text">Campus Life</span></h2>
+        <p class="section-desc">Designed with the modern university experience in mind — tech-savvy, efficiency-focused, and always on the go.</p>
+      </div>
+      <div class="audience-grid">
+        <div class="audience-card scroll-animate">
+          <div class="audience-icon"><i data-lucide="graduation-cap"></i></div>
+          <h3 class="audience-title">University Students</h3>
+          <p class="audience-age">18–25 years</p>
+          <ul class="audience-traits">
+            <li>Digital natives</li>
+            <li>Mobile-first</li>
+            <li>Value transparency</li>
+          </ul>
+        </div>
+        <div class="audience-card scroll-animate" style="transition-delay: 0.1s">
+          <div class="audience-icon"><i data-lucide="users"></i></div>
+          <h3 class="audience-title">Class Representatives</h3>
+          <p class="audience-age">Leadership roles</p>
+          <ul class="audience-traits">
+            <li>Efficiency-focused</li>
+            <li>Accountability</li>
+            <li>Communication</li>
+          </ul>
+        </div>
+        <div class="audience-card scroll-animate" style="transition-delay: 0.2s">
+          <div class="audience-icon"><i data-lucide="sparkles"></i></div>
+          <h3 class="audience-title">Tech-Savvy Users</h3>
+          <p class="audience-age">Early adopters</p>
+          <ul class="audience-traits">
+            <li>Quick learners</li>
+            <li>Feature explorers</li>
+            <li>Feedback providers</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRAND PERSONALITY SECTION -->
+  <section class="personality-section section-padding" id="personality">
+    <div class="max-w-6xl">
+      <div class="section-header scroll-animate">
+        <span class="section-badge secondary">Brand Personality</span>
+        <h2 class="section-title">Who We Are</h2>
+        <p class="section-desc">Our brand personality embodies the essence of modern campus energy — dynamic, trustworthy, and effortlessly intuitive.</p>
+      </div>
+      <div class="personality-grid">
+        <div class="personality-card glass-card scroll-animate">
+          <div class="personality-content">
+            <span class="personality-number gradient-text">01</span>
+            <div>
+              <h3 class="personality-title">Vibrant</h3>
+              <p class="personality-desc">Energetic and lively, reflecting the dynamic spirit of campus life and student communities.</p>
+            </div>
+          </div>
+        </div>
+        <div class="personality-card glass-card scroll-animate" style="transition-delay: 0.1s">
+          <div class="personality-content">
+            <span class="personality-number gradient-text">02</span>
+            <div>
+              <h3 class="personality-title">Youthful</h3>
+              <p class="personality-desc">Fresh and contemporary, speaking the language of digital-native students.</p>
+            </div>
+          </div>
+        </div>
+        <div class="personality-card glass-card scroll-animate" style="transition-delay: 0.2s">
+          <div class="personality-content">
+            <span class="personality-number gradient-text">03</span>
+            <div>
+              <h3 class="personality-title">Reliable</h3>
+              <p class="personality-desc">Dependable and trustworthy, ensuring accurate attendance records and consistent performance.</p>
+            </div>
+          </div>
+        </div>
+        <div class="personality-card glass-card scroll-animate" style="transition-delay: 0.3s">
+          <div class="personality-content">
+            <span class="personality-number gradient-text">04</span>
+            <div>
+              <h3 class="personality-title">Modern-Minimalist</h3>
+              <p class="personality-desc">Clean and intuitive, removing friction and focusing on what matters most.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORM SECTION -->
+  <section class="platform-section section-padding" id="platform">
+    <div class="max-w-6xl">
+      <div class="section-header scroll-animate">
+        <span class="section-badge primary">Platform</span>
+        <h2 class="section-title">Everywhere You Are</h2>
+        <p class="section-desc">Built with Flutter for true cross-platform consistency — same experience on iOS, Android, and Web.</p>
+      </div>
+      <div class="platform-grid">
+        <div class="platform-card glass-card scroll-animate">
+          <div class="platform-icon"><i data-lucide="smartphone"></i></div>
+          <h3 class="platform-label">iOS</h3>
+          <p class="platform-subtitle">iPhone & iPad</p>
+        </div>
+        <div class="platform-card glass-card scroll-animate" style="transition-delay: 0.1s">
+          <div class="platform-icon"><i data-lucide="smartphone"></i></div>
+          <h3 class="platform-label">Android</h3>
+          <p class="platform-subtitle">Phones & Tablets</p>
+        </div>
+        <div class="platform-card glass-card scroll-animate" style="transition-delay: 0.2s">
+          <div class="platform-icon"><i data-lucide="monitor"></i></div>
+          <h3 class="platform-label">Web</h3>
+          <p class="platform-subtitle">Any Browser</p>
+        </div>
+      </div>
+      <div class="platform-deploy glass-card scroll-animate">
+        <div class="platform-deploy-content">
+          <div class="platform-deploy-info">
+            <div class="platform-deploy-icon"><i data-lucide="globe"></i></div>
+            <div>
+              <h3 class="platform-deploy-title">Live Deployment</h3>
+              <p class="platform-deploy-sub">Currently deployed at JKUAT</p>
+            </div>
+          </div>
+          <a href="https://jkuat.venuefy.top" target="_blank" rel="noopener noreferrer" class="platform-deploy-link">
+            jkuat.venuefy.top
+            <i data-lucide="external-link"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer section-padding">
+    <div class="max-w-6xl">
+      <div class="footer-content scroll-animate">
+        <div class="footer-logo">
+          <div class="footer-logo-icon">
+            <svg viewBox="0 0 72 72" fill="none">
+              <path d="M16 20L36 52L56 20" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M28 36L34 42L46 30" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+              <rect x="44" y="12" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+              <line x1="48" y1="16" x2="48" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+              <line x1="56" y1="16" x2="56" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+            </svg>
+          </div>
+          <span class="footer-brand">Venuefy</span>
+        </div>
+        <p class="footer-tagline">The student-centric gateway to smarter university attendance.</p>
+        <div class="footer-positioning">Fraud-proof • Inclusive • Streak-motivating</div>
+        <div class="footer-divider"></div>
+        <p class="footer-copyright">© <span id="year"></span> Venuefy. Brand Portfolio.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Update year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Navigation scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
+    // Scroll animations using Intersection Observer
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          
+          // Animate counters
+          if (entry.target.classList.contains('metric-card')) {
+            const valueEl = entry.target.querySelector('.metric-value');
+            const countTo = valueEl.dataset.count;
+            const suffix = valueEl.dataset.suffix || '%+';
+            
+            if (countTo) {
+              animateCounter(valueEl, parseInt(countTo), suffix);
+            }
+          }
+        }
+      });
+    }, observerOptions);
+
+    // Observe all scroll-animate elements
+    document.querySelectorAll('.scroll-animate, .scroll-animate-left, .scroll-animate-right').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Counter animation
+    function animateCounter(element, target, suffix) {
+      let current = 0;
+      const increment = target / 60;
+      const duration = 2000;
+      const stepTime = duration / 60;
+      
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        element.textContent = Math.round(current) + suffix;
+      }, stepTime);
+    }
+
+    // Copy color to clipboard
+    function copyColor(hex) {
+      navigator.clipboard.writeText(hex).then(() => {
+        // Find the clicked card and show feedback
+        const cards = document.querySelectorAll('.color-card');
+        cards.forEach(card => {
+          const copyEl = card.querySelector('.color-copy');
+          if (card.querySelector('.color-hex').textContent === hex) {
+            copyEl.innerHTML = '<i data-lucide="check"></i> Copied!';
+            lucide.createIcons();
+            setTimeout(() => {
+              copyEl.innerHTML = '<i data-lucide="copy"></i> Copy';
+              lucide.createIcons();
+            }, 2000);
+          }
+        });
+      });
+    }
+
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
