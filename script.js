@@ -329,7 +329,7 @@ function initCoffeeModal() {
             showStatus('Initiating STK Push...', 'loading');
             sendBtn.disabled = true;
 
-            const response = await fetch('https://chekra.innovativestemhub.com/initiate-stk', {
+            const response = await fetch('https://coffee.venuefy.top/initiate-stk', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ phoneNumber: formattedPhone, amount: amount })
