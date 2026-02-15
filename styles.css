@@ -1445,6 +1445,52 @@ img {
 }
 
 /* ============================================
+   CLIENTELE SECTION
+   ============================================ */
+.clientele {
+    padding: 6rem 0;
+    background: white;
+}
+
+.clientele-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+.client-item {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    padding: 1.5rem 2.5rem;
+    border-radius: 1.5rem;
+    background: hsla(216, 33%, 97%, 0.5);
+}
+
+.client-item:hover {
+    opacity: 1;
+    background: white;
+    box-shadow: var(--shadow-card);
+    transform: translateY(-4px);
+}
+
+.client-logo {
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+}
+
+.client-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* ============================================
    DEVELOPER STORY SECTION
    ============================================ */
 /* ============================================

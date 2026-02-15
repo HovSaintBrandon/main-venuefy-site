@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Venuefy Brand Portfolio | Streamline Campus Life</title>
-  <meta name="description" content="Venuefy Brand Portfolio - The student-centric gateway to smarter university attendance. Digital-first attendance marking with QR, Nearby Share, and real-time dashboards.">
-  
+  <meta name="description"
+    content="Venuefy Brand Portfolio - The student-centric gateway to smarter university attendance. Digital-first attendance marking with QR, Nearby Share, and real-time dashboards.">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  
+
   <style>
     /* ========== CSS RESET & BASE ========== */
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -28,37 +34,37 @@
       --foreground: hsl(220, 20%, 10%);
       --card: hsl(0, 0%, 100%);
       --card-foreground: hsl(220, 20%, 10%);
-      
+
       /* Electric Blue - Primary */
       --primary: hsl(216, 100%, 50%);
       --primary-foreground: hsl(0, 0%, 100%);
-      
+
       /* Fresh Green - Success/Attendance */
       --secondary: hsl(150, 100%, 40%);
       --secondary-foreground: hsl(0, 0%, 100%);
-      
+
       /* Muted */
       --muted: hsl(216, 20%, 92%);
       --muted-foreground: hsl(220, 10%, 40%);
-      
+
       /* Accent - Warm Orange */
       --accent: hsl(35, 100%, 50%);
       --accent-foreground: hsl(0, 0%, 100%);
-      
+
       --border: hsl(216, 20%, 88%);
-      
+
       /* Custom Brand Tokens */
       --venuefy-dark: hsl(220, 20%, 10%);
-      
+
       /* Gradients */
       --gradient-hero: linear-gradient(135deg, hsl(216, 100%, 50%) 0%, hsl(200, 100%, 45%) 50%, hsl(150, 100%, 40%) 100%);
-      
+
       /* Shadows */
       --shadow-soft: 0 4px 20px -4px hsla(220, 20%, 10%, 0.08);
       --shadow-card: 0 8px 40px -12px hsla(220, 20%, 10%, 0.12);
       --shadow-elevated: 0 20px 60px -20px hsla(220, 20%, 10%, 0.2);
       --shadow-glow: 0 0 60px -10px hsla(216, 100%, 50%, 0.4);
-      
+
       --radius: 0.75rem;
     }
 
@@ -75,7 +81,12 @@
       -moz-osx-font-smoothing: grayscale;
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       font-family: 'Poppins', sans-serif;
       line-height: 1.2;
     }
@@ -124,8 +135,15 @@
 
     /* ========== ANIMATIONS ========== */
     @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-20px); }
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
     }
 
     @keyframes fadeInUp {
@@ -133,6 +151,7 @@
         opacity: 0;
         transform: translateY(40px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -140,8 +159,13 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
     }
 
     @keyframes slideDown {
@@ -149,6 +173,7 @@
         opacity: 0;
         transform: translateY(-100px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -156,25 +181,48 @@
     }
 
     @keyframes glowPulse {
-      0%, 100% { opacity: 0.2; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(1.05); }
+
+      0%,
+      100% {
+        opacity: 0.2;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.4;
+        transform: scale(1.05);
+      }
     }
 
     @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(8px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(8px);
+      }
     }
 
     @keyframes ping {
-      75%, 100% {
+
+      75%,
+      100% {
         transform: scale(1.5);
         opacity: 0;
       }
     }
 
     @keyframes countUp {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
     }
 
     .animate-float {
@@ -191,12 +239,29 @@
       animation: fadeInUp 0.8s ease-out forwards;
     }
 
-    .animate-delay-1 { animation-delay: 0.1s; }
-    .animate-delay-2 { animation-delay: 0.2s; }
-    .animate-delay-3 { animation-delay: 0.3s; }
-    .animate-delay-4 { animation-delay: 0.4s; }
-    .animate-delay-5 { animation-delay: 0.5s; }
-    .animate-delay-6 { animation-delay: 0.6s; }
+    .animate-delay-1 {
+      animation-delay: 0.1s;
+    }
+
+    .animate-delay-2 {
+      animation-delay: 0.2s;
+    }
+
+    .animate-delay-3 {
+      animation-delay: 0.3s;
+    }
+
+    .animate-delay-4 {
+      animation-delay: 0.4s;
+    }
+
+    .animate-delay-5 {
+      animation-delay: 0.5s;
+    }
+
+    .animate-delay-6 {
+      animation-delay: 0.6s;
+    }
 
     /* ========== NAVIGATION ========== */
     .nav {
@@ -574,10 +639,19 @@
       box-shadow: var(--shadow-elevated);
     }
 
-    .color-swatch.primary { background: var(--primary); }
-    .color-swatch.secondary { background: var(--secondary); }
-    .color-swatch.accent { background: var(--accent); }
-    .color-swatch.gray { 
+    .color-swatch.primary {
+      background: var(--primary);
+    }
+
+    .color-swatch.secondary {
+      background: var(--secondary);
+    }
+
+    .color-swatch.accent {
+      background: var(--accent);
+    }
+
+    .color-swatch.gray {
       background: var(--background);
       border: 2px solid var(--border);
     }
@@ -1697,6 +1771,12 @@
       color: var(--muted-foreground);
     }
 
+    .jkuat-logo-small {
+      width: 2.5rem;
+      height: 2.5rem;
+      object-fit: contain;
+    }
+
     .platform-deploy-link {
       display: inline-flex;
       align-items: center;
@@ -1821,6 +1901,7 @@
     }
   </style>
 </head>
+
 <body>
   <!-- NAVIGATION -->
   <nav class="nav" id="nav">
@@ -1828,8 +1909,10 @@
       <a href="#" class="nav-logo">
         <div class="nav-logo-icon">
           <svg viewBox="0 0 72 72" fill="none">
-            <path d="M16 20L36 52L56 20" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M28 36L34 42L46 30" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+            <path d="M16 20L36 52L56 20" stroke="currentColor" stroke-width="6" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M28 36L34 42L46 30" stroke="currentColor" stroke-width="4" stroke-linecap="round"
+              stroke-linejoin="round" opacity="0.8" />
           </svg>
         </div>
         <span class="nav-brand gradient-text">Venuefy</span>
@@ -1855,11 +1938,13 @@
     <div class="hero-content">
       <div class="hero-logo">
         <svg viewBox="0 0 72 72" fill="none">
-          <path d="M16 20L36 52L56 20" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M28 36L34 42L46 30" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
-          <rect x="44" y="12" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2" opacity="0.6"/>
-          <line x1="48" y1="16" x2="48" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6"/>
-          <line x1="56" y1="16" x2="56" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+          <path d="M16 20L36 52L56 20" stroke="currentColor" stroke-width="6" stroke-linecap="round"
+            stroke-linejoin="round" />
+          <path d="M28 36L34 42L46 30" stroke="currentColor" stroke-width="4" stroke-linecap="round"
+            stroke-linejoin="round" opacity="0.8" />
+          <rect x="44" y="12" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2" opacity="0.6" />
+          <line x1="48" y1="16" x2="48" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6" />
+          <line x1="56" y1="16" x2="56" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6" />
         </svg>
       </div>
       <h1 class="hero-title"><span class="gradient-text">Venuefy</span></h1>
@@ -1893,7 +1978,8 @@
       <div class="section-header scroll-animate">
         <span class="section-badge primary">Color Palette</span>
         <h2 class="section-title">Campus Energy, Digitized</h2>
-        <p class="section-desc">Our colors capture the vibrant, dynamic spirit of university life — energetic blues for trust and innovation, fresh greens for success, and warm orange for important moments.</p>
+        <p class="section-desc">Our colors capture the vibrant, dynamic spirit of university life — energetic blues for
+          trust and innovation, fresh greens for success, and warm orange for important moments.</p>
       </div>
       <div class="colors-grid">
         <div class="color-card scroll-animate" onclick="copyColor('#0066FF')">
@@ -1963,7 +2049,8 @@
       <div class="section-header scroll-animate">
         <span class="section-badge secondary">Typography</span>
         <h2 class="section-title">Clear. Bold. Mobile-First.</h2>
-        <p class="section-desc">Our type system prioritizes readability on mobile devices while maintaining a bold, confident presence for headlines.</p>
+        <p class="section-desc">Our type system prioritizes readability on mobile devices while maintaining a bold,
+          confident presence for headlines.</p>
       </div>
       <div class="typography-grid">
         <div class="type-showcase scroll-animate-left">
@@ -2018,7 +2105,8 @@
       <div class="type-context glass-card scroll-animate">
         <p class="type-label">In Context</p>
         <h4 class="type-context-title">Never miss a class again.</h4>
-        <p class="type-context-body">Track your attendance streaks, get real-time notifications, and stay on top of your academic commitments with our intelligent campus companion.</p>
+        <p class="type-context-body">Track your attendance streaks, get real-time notifications, and stay on top of your
+          academic commitments with our intelligent campus companion.</p>
         <a href="#" class="type-context-btn">Get Started</a>
       </div>
     </div>
@@ -2030,18 +2118,22 @@
       <div class="section-header scroll-animate">
         <span class="section-badge accent">Logo System</span>
         <h2 class="section-title">The Venuefy Mark</h2>
-        <p class="section-desc">A stylized "V" merging a checkmark and calendar grid — symbolizing attendance verification and schedule management. Designed for scalability across all touchpoints.</p>
+        <p class="section-desc">A stylized "V" merging a checkmark and calendar grid — symbolizing attendance
+          verification and schedule management. Designed for scalability across all touchpoints.</p>
       </div>
       <div class="logo-grid scroll-animate">
         <div class="logo-card light glass-card">
           <div class="logo-lockup">
             <div class="logo-icon-lg">
               <svg viewBox="0 0 72 72" fill="none">
-                <path d="M16 20L36 52L56 20" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M28 36L34 42L46 30" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
-                <rect x="44" y="12" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2" opacity="0.6"/>
-                <line x1="48" y1="16" x2="48" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6"/>
-                <line x1="56" y1="16" x2="56" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+                <path d="M16 20L36 52L56 20" stroke="currentColor" stroke-width="6" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M28 36L34 42L46 30" stroke="currentColor" stroke-width="4" stroke-linecap="round"
+                  stroke-linejoin="round" opacity="0.8" />
+                <rect x="44" y="12" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2"
+                  opacity="0.6" />
+                <line x1="48" y1="16" x2="48" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6" />
+                <line x1="56" y1="16" x2="56" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6" />
               </svg>
             </div>
             <span class="logo-wordmark">Venuefy</span>
@@ -2052,11 +2144,14 @@
           <div class="logo-lockup">
             <div class="logo-icon-lg">
               <svg viewBox="0 0 72 72" fill="none">
-                <path d="M16 20L36 52L56 20" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M28 36L34 42L46 30" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
-                <rect x="44" y="12" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2" opacity="0.6"/>
-                <line x1="48" y1="16" x2="48" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6"/>
-                <line x1="56" y1="16" x2="56" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+                <path d="M16 20L36 52L56 20" stroke="currentColor" stroke-width="6" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M28 36L34 42L46 30" stroke="currentColor" stroke-width="4" stroke-linecap="round"
+                  stroke-linejoin="round" opacity="0.8" />
+                <rect x="44" y="12" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2"
+                  opacity="0.6" />
+                <line x1="48" y1="16" x2="48" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6" />
+                <line x1="56" y1="16" x2="56" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6" />
               </svg>
             </div>
             <span class="logo-wordmark">Venuefy</span>
@@ -2069,11 +2164,13 @@
         <div class="logo-variation glass-card">
           <div class="logo-variation-icon gradient">
             <svg viewBox="0 0 72 72" fill="none">
-              <path d="M16 20L36 52L56 20" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M28 36L34 42L46 30" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
-              <rect x="44" y="12" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2" opacity="0.6"/>
-              <line x1="48" y1="16" x2="48" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6"/>
-              <line x1="56" y1="16" x2="56" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+              <path d="M16 20L36 52L56 20" stroke="currentColor" stroke-width="6" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M28 36L34 42L46 30" stroke="currentColor" stroke-width="4" stroke-linecap="round"
+                stroke-linejoin="round" opacity="0.8" />
+              <rect x="44" y="12" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2" opacity="0.6" />
+              <line x1="48" y1="16" x2="48" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6" />
+              <line x1="56" y1="16" x2="56" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6" />
             </svg>
           </div>
           <span class="logo-variation-label">Icon Only</span>
@@ -2081,11 +2178,13 @@
         <div class="logo-variation glass-card">
           <div class="logo-variation-icon mono">
             <svg viewBox="0 0 72 72" fill="none">
-              <path d="M16 20L36 52L56 20" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M28 36L34 42L46 30" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
-              <rect x="44" y="12" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2" opacity="0.6"/>
-              <line x1="48" y1="16" x2="48" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6"/>
-              <line x1="56" y1="16" x2="56" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+              <path d="M16 20L36 52L56 20" stroke="currentColor" stroke-width="6" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M28 36L34 42L46 30" stroke="currentColor" stroke-width="4" stroke-linecap="round"
+                stroke-linejoin="round" opacity="0.8" />
+              <rect x="44" y="12" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2" opacity="0.6" />
+              <line x1="48" y1="16" x2="48" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6" />
+              <line x1="56" y1="16" x2="56" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6" />
             </svg>
           </div>
           <span class="logo-variation-label">Monochrome</span>
@@ -2094,8 +2193,10 @@
           <div class="logo-compact">
             <div class="logo-compact-icon">
               <svg viewBox="0 0 72 72" fill="none">
-                <path d="M16 20L36 52L56 20" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M28 36L34 42L46 30" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+                <path d="M16 20L36 52L56 20" stroke="currentColor" stroke-width="6" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M28 36L34 42L46 30" stroke="currentColor" stroke-width="4" stroke-linecap="round"
+                  stroke-linejoin="round" opacity="0.8" />
               </svg>
             </div>
             <span class="logo-compact-letter gradient-text">V</span>
@@ -2105,11 +2206,13 @@
         <div class="logo-variation glass-card">
           <div class="logo-variation-icon glow">
             <svg viewBox="0 0 72 72" fill="none">
-              <path d="M16 20L36 52L56 20" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M28 36L34 42L46 30" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
-              <rect x="44" y="12" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2" opacity="0.6"/>
-              <line x1="48" y1="16" x2="48" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6"/>
-              <line x1="56" y1="16" x2="56" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+              <path d="M16 20L36 52L56 20" stroke="currentColor" stroke-width="6" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M28 36L34 42L46 30" stroke="currentColor" stroke-width="4" stroke-linecap="round"
+                stroke-linejoin="round" opacity="0.8" />
+              <rect x="44" y="12" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2" opacity="0.6" />
+              <line x1="48" y1="16" x2="48" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6" />
+              <line x1="56" y1="16" x2="56" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6" />
             </svg>
           </div>
           <span class="logo-variation-label">App Icon</span>
@@ -2123,11 +2226,14 @@
             <div class="logo-clearspace-lockup">
               <div class="logo-clearspace-icon">
                 <svg viewBox="0 0 72 72" fill="none">
-                  <path d="M16 20L36 52L56 20" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M28 36L34 42L46 30" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
-                  <rect x="44" y="12" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2" opacity="0.6"/>
-                  <line x1="48" y1="16" x2="48" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6"/>
-                  <line x1="56" y1="16" x2="56" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+                  <path d="M16 20L36 52L56 20" stroke="currentColor" stroke-width="6" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M28 36L34 42L46 30" stroke="currentColor" stroke-width="4" stroke-linecap="round"
+                    stroke-linejoin="round" opacity="0.8" />
+                  <rect x="44" y="12" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2"
+                    opacity="0.6" />
+                  <line x1="48" y1="16" x2="48" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6" />
+                  <line x1="56" y1="16" x2="56" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6" />
                 </svg>
               </div>
               <span class="logo-clearspace-text gradient-text">Venuefy</span>
@@ -2144,7 +2250,8 @@
       <div class="section-header scroll-animate">
         <span class="section-badge secondary">Proven Impact</span>
         <h2 class="section-title">Numbers That Matter</h2>
-        <p class="section-desc">Real results from university pilot deployments demonstrating Venuefy's transformative impact on campus attendance management.</p>
+        <p class="section-desc">Real results from university pilot deployments demonstrating Venuefy's transformative
+          impact on campus attendance management.</p>
       </div>
       <div class="metrics-grid">
         <div class="metric-card glass-card scroll-animate">
@@ -2181,31 +2288,36 @@
       <div class="section-header scroll-animate">
         <span class="section-badge primary">Key Visual Assets</span>
         <h2 class="section-title">Signature UI Elements</h2>
-        <p class="section-desc">Distinctive interface components that define the Venuefy experience — each designed for instant recognition and delightful interaction.</p>
+        <p class="section-desc">Distinctive interface components that define the Venuefy experience — each designed for
+          instant recognition and delightful interaction.</p>
       </div>
       <div class="assets-grid">
         <div class="asset-card glass-card scroll-animate">
           <div class="asset-icon primary"><i data-lucide="qr-code"></i></div>
           <h3 class="asset-title">Animated QR Scanner</h3>
-          <p class="asset-desc">Dynamic scanning interface with real-time feedback and success animations for seamless check-ins.</p>
+          <p class="asset-desc">Dynamic scanning interface with real-time feedback and success animations for seamless
+            check-ins.</p>
           <div class="asset-preview primary"></div>
         </div>
         <div class="asset-card glass-card scroll-animate" style="transition-delay: 0.1s">
           <div class="asset-icon secondary"><i data-lucide="trending-up"></i></div>
           <h3 class="asset-title">Streak Progress Rings</h3>
-          <p class="asset-desc">Gamified attendance visualization with circular progress indicators and milestone celebrations.</p>
+          <p class="asset-desc">Gamified attendance visualization with circular progress indicators and milestone
+            celebrations.</p>
           <div class="asset-preview secondary"></div>
         </div>
         <div class="asset-card glass-card scroll-animate" style="transition-delay: 0.2s">
           <div class="asset-icon accent"><i data-lucide="flame"></i></div>
           <h3 class="asset-title">Venue Heatmaps</h3>
-          <p class="asset-desc">Real-time 'hotness' indicators showing popular venues and optimal times for class attendance.</p>
+          <p class="asset-desc">Real-time 'hotness' indicators showing popular venues and optimal times for class
+            attendance.</p>
           <div class="asset-preview accent"></div>
         </div>
         <div class="asset-card glass-card scroll-animate" style="transition-delay: 0.3s">
           <div class="asset-icon primary"><i data-lucide="camera"></i></div>
           <h3 class="asset-title">Live Snaps Feed</h3>
-          <p class="asset-desc">Social proof through timestamped venue photos creating authentic attendance documentation.</p>
+          <p class="asset-desc">Social proof through timestamped venue photos creating authentic attendance
+            documentation.</p>
           <div class="asset-preview primary"></div>
         </div>
       </div>
@@ -2218,8 +2330,11 @@
       <div class="value-grid">
         <div class="value-content scroll-animate-left">
           <span class="section-badge accent">Core Value</span>
-          <h2 class="section-title">Digital-first attendance for the <span class="gradient-text">modern campus</span></h2>
-          <p class="section-desc">Venuefy transforms attendance from a tedious administrative task into an engaging, transparent experience. QR scanning, Nearby Share, and manual options ensure no student is left behind — while real-time dashboards keep everyone informed.</p>
+          <h2 class="section-title">Digital-first attendance for the <span class="gradient-text">modern campus</span>
+          </h2>
+          <p class="section-desc">Venuefy transforms attendance from a tedious administrative task into an engaging,
+            transparent experience. QR scanning, Nearby Share, and manual options ensure no student is left behind —
+            while real-time dashboards keep everyone informed.</p>
           <div class="value-features">
             <div class="value-feature">
               <div class="value-feature-icon"><i data-lucide="zap"></i></div>
@@ -2271,7 +2386,8 @@
       <div class="section-header scroll-animate">
         <span class="section-badge">Target Audience</span>
         <h2 class="section-title">Built for <span class="gradient-text">Campus Life</span></h2>
-        <p class="section-desc">Designed with the modern university experience in mind — tech-savvy, efficiency-focused, and always on the go.</p>
+        <p class="section-desc">Designed with the modern university experience in mind — tech-savvy, efficiency-focused,
+          and always on the go.</p>
       </div>
       <div class="audience-grid">
         <div class="audience-card scroll-animate">
@@ -2314,7 +2430,8 @@
       <div class="section-header scroll-animate">
         <span class="section-badge secondary">Brand Personality</span>
         <h2 class="section-title">Who We Are</h2>
-        <p class="section-desc">Our brand personality embodies the essence of modern campus energy — dynamic, trustworthy, and effortlessly intuitive.</p>
+        <p class="section-desc">Our brand personality embodies the essence of modern campus energy — dynamic,
+          trustworthy, and effortlessly intuitive.</p>
       </div>
       <div class="personality-grid">
         <div class="personality-card glass-card scroll-animate">
@@ -2322,7 +2439,8 @@
             <span class="personality-number gradient-text">01</span>
             <div>
               <h3 class="personality-title">Vibrant</h3>
-              <p class="personality-desc">Energetic and lively, reflecting the dynamic spirit of campus life and student communities.</p>
+              <p class="personality-desc">Energetic and lively, reflecting the dynamic spirit of campus life and student
+                communities.</p>
             </div>
           </div>
         </div>
@@ -2340,7 +2458,8 @@
             <span class="personality-number gradient-text">03</span>
             <div>
               <h3 class="personality-title">Reliable</h3>
-              <p class="personality-desc">Dependable and trustworthy, ensuring accurate attendance records and consistent performance.</p>
+              <p class="personality-desc">Dependable and trustworthy, ensuring accurate attendance records and
+                consistent performance.</p>
             </div>
           </div>
         </div>
@@ -2363,7 +2482,8 @@
       <div class="section-header scroll-animate">
         <span class="section-badge primary">Platform</span>
         <h2 class="section-title">Everywhere You Are</h2>
-        <p class="section-desc">Built with Flutter for true cross-platform consistency — same experience on iOS, Android, and Web.</p>
+        <p class="section-desc">Built with Flutter for true cross-platform consistency — same experience on iOS,
+          Android, and Web.</p>
       </div>
       <div class="platform-grid">
         <div class="platform-card glass-card scroll-animate">
@@ -2388,7 +2508,12 @@
             <div class="platform-deploy-icon"><i data-lucide="globe"></i></div>
             <div>
               <h3 class="platform-deploy-title">Live Deployment</h3>
-              <p class="platform-deploy-sub">Currently deployed at JKUAT</p>
+              <p class="platform-deploy-sub" style="display: flex; align-items: center; gap: 0.75rem;">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/en/thumb/7/71/Jomo_Kenyatta_University_of_Agriculture_and_Technology_logo.png/220px-Jomo_Kenyatta_University_of_Agriculture_and_Technology_logo.png"
+                  alt="JKUAT Logo" class="jkuat-logo-small">
+                Currently deployed at JKUAT
+              </p>
             </div>
           </div>
           <a href="https://jkuat.venuefy.top" target="_blank" rel="noopener noreferrer" class="platform-deploy-link">
@@ -2407,11 +2532,13 @@
         <div class="footer-logo">
           <div class="footer-logo-icon">
             <svg viewBox="0 0 72 72" fill="none">
-              <path d="M16 20L36 52L56 20" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M28 36L34 42L46 30" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
-              <rect x="44" y="12" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2" opacity="0.6"/>
-              <line x1="48" y1="16" x2="48" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6"/>
-              <line x1="56" y1="16" x2="56" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6"/>
+              <path d="M16 20L36 52L56 20" stroke="currentColor" stroke-width="6" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M28 36L34 42L46 30" stroke="currentColor" stroke-width="4" stroke-linecap="round"
+                stroke-linejoin="round" opacity="0.8" />
+              <rect x="44" y="12" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2" opacity="0.6" />
+              <line x1="48" y1="16" x2="48" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6" />
+              <line x1="56" y1="16" x2="56" y2="24" stroke="currentColor" stroke-width="2" opacity="0.6" />
             </svg>
           </div>
           <span class="footer-brand">Venuefy</span>
@@ -2451,13 +2578,13 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          
+
           // Animate counters
           if (entry.target.classList.contains('metric-card')) {
             const valueEl = entry.target.querySelector('.metric-value');
             const countTo = valueEl.dataset.count;
             const suffix = valueEl.dataset.suffix || '%+';
-            
+
             if (countTo) {
               animateCounter(valueEl, parseInt(countTo), suffix);
             }
@@ -2477,7 +2604,7 @@
       const increment = target / 60;
       const duration = 2000;
       const stepTime = duration / 60;
-      
+
       const timer = setInterval(() => {
         current += increment;
         if (current >= target) {
@@ -2522,4 +2649,5 @@
     });
   </script>
 </body>
+
 </html>
