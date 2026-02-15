@@ -140,18 +140,12 @@ function initNavbarScroll() {
     const navbar = document.getElementById('navbar');
 
     if (navbar) {
-        let lastScroll = 0;
-
         window.addEventListener('scroll', function () {
-            const currentScroll = window.pageYOffset;
-
-            if (currentScroll > 50) {
-                navbar.style.background = 'hsla(222, 30%, 8%, 0.95)';
+            if (window.pageYOffset > 50) {
+                navbar.classList.add('scrolled');
             } else {
-                navbar.style.background = '';
+                navbar.classList.remove('scrolled');
             }
-
-            lastScroll = currentScroll;
         });
     }
 }

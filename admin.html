@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VenueFY Admin System | Strategic Campus Oversight</title>
+    <meta name="description"
+        content="VenueFY Admin System - A multi-layered management system for campus-wide oversight, identity management, and academic analytics.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-inner">
+            <div class="container navbar-container">
+                <div class="navbar-brand">
+                    <a href="index.html" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <div class="logo-icon">V</div>
+                        <span class="logo-text">VenueFY</span>
+                    </a>
+                </div>
+
+                <div class="navbar-links">
+                    <a href="index.html#features" class="nav-link">Features</a>
+                    <a href="index.html#products" class="nav-link">Products</a>
+                    <a href="index.html#benefits" class="nav-link">Benefits</a>
+                    <a href="index.html#story" class="nav-link">Our Story</a>
+                </div>
+
+                <div class="navbar-cta">
+                    <a href="index.html#contact" class="btn btn-primary btn-sm">Get Started</a>
+                </div>
+
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+                    <i data-lucide="menu" class="menu-icon"></i>
+                    <i data-lucide="x" class="close-icon hidden"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu hidden" id="mobile-menu">
+            <div class="container">
+                <a href="index.html#features" class="mobile-nav-link">Features</a>
+                <a href="index.html#products" class="mobile-nav-link">Products</a>
+                <a href="index.html#benefits" class="mobile-nav-link">Benefits</a>
+                <a href="index.html#story" class="mobile-nav-link">Our Story</a>
+                <div class="mobile-cta">
+                    <a href="index.html#contact" class="btn btn-primary">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-orb hero-orb-1"></div>
+            <div class="hero-orb hero-orb-2"></div>
+            <div class="hero-orb hero-orb-3"></div>
+            <div class="hero-grid"></div>
+
+            <div class="container hero-content">
+                <div class="hero-inner">
+                    <div class="hero-badge animate-fade-up">
+                        <i data-lucide="shield-check" class="badge-icon"></i>
+                        <span>Admin & Superadmin Control</span>
+                    </div>
+
+                    <h1 class="hero-title animate-fade-up delay-100">
+                        Strategic <span class="gradient-text">Campus Oversight</span> & Data Integrity
+                    </h1>
+
+                    <p class="hero-subtitle animate-fade-up delay-200">
+                        The VenueFY Admin System is a multi-layered platform designed for administrators
+                        to maintain institutional stability, manage roles, and drive academic performance.
+                    </p>
+
+                    <div class="hero-cta animate-fade-up delay-300">
+                        <a href="#identity" class="btn btn-hero btn-xl">Explore Features</a>
+                        <a href="index.html#contact" class="btn btn-hero-outline btn-xl">Request Access</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Identity & Role Management -->
+        <section class="section-padding" id="identity">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">01. Governance</span>
+                    <h2 class="section-title">Identity & <span class="gradient-text">Role Management</span></h2>
+                    <p class="section-subtitle">Flexible hierarchy and cryptographic security for institutional control.
+                    </p>
+                </div>
+
+                <div class="problems-grid">
+                    <div class="problem-card">
+                        <div class="problem-icon">
+                            <i data-lucide="user-plus"></i>
+                        </div>
+                        <h3 class="problem-title">Promotion & Demotion</h3>
+                        <p class="problem-desc">Promote students to Class Reps with unique, salted login IDs, ensuring
+                            cryptographic separation from guest accounts.</p>
+                    </div>
+
+                    <div class="problem-card">
+                        <div class="problem-icon">
+                            <i data-lucide="shield-alert"></i>
+                        </div>
+                        <h3 class="problem-title">Superadmin Powers</h3>
+                        <p class="problem-desc">Ultimate authority to create, update, or audit administrator accounts
+                            across the entire institution.</p>
+                    </div>
+
+                    <div class="problem-card">
+                        <div class="problem-icon">
+                            <i data-lucide="user-minus"></i>
+                        </div>
+                        <h3 class="problem-title">Account Maintenance</h3>
+                        <p class="problem-desc">Efficiently prune the ecosystem by deleting graduated students or stale
+                            representative accounts.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mapping Section -->
+        <section class="section-padding" style="background: hsla(216, 33%, 97%, 1);">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">02. Logistics</span>
+                    <h2 class="section-title">Student-Representative <span class="gradient-text">Mapping</span></h2>
+                    <p class="section-subtitle">Organize the student body into actionable groups for better
+                        communication.</p>
+                </div>
+
+                <div class="products-grid" style="grid-template-columns: 1fr;">
+                    <div class="product-card"
+                        style="display: flex; flex-direction: row; gap: 3rem; align-items: center; text-align: left;">
+                        <div style="flex: 1;">
+                            <h3 class="product-title" style="margin-bottom: 1rem;">Centralized Logistics</h3>
+                            <p class="product-desc" style="margin-bottom: 2rem;">
+                                Bulk-assign students to representatives in seconds. Our mapping engine ensures every
+                                student belongs to a manageable cohort.
+                            </p>
+                            <ul class="product-features">
+                                <li>
+                                    <div class="feature-dot" style="background: var(--primary);"></div>
+                                    <span>Bulk student cohort assignment</span>
+                                </li>
+                                <li>
+                                    <div class="feature-dot" style="background: var(--primary);"></div>
+                                    <span>Visibility into course, group, and last activity</span>
+                                </li>
+                                <li>
+                                    <div class="feature-dot" style="background: var(--primary);"></div>
+                                    <span>Real-time Rep responsibility tracking</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div
+                            style="flex: 1; min-height: 300px; background: var(--muted); border-radius: 1rem; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                            <!-- Placeholder for a dashboard illustration or UI mock -->
+                            <i data-lucide="layout-dashboard"
+                                style="width: 10rem; height: 10rem; color: var(--border);"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analytics Section -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">03. Performance</span>
+                    <h2 class="section-title">Academic <span class="gradient-text">Analytics & KPI Monitoring</span>
+                    </h2>
+                    <p class="section-subtitle">Turn raw data into professional insights for school management.</p>
+                </div>
+
+                <div class="problems-grid">
+                    <div class="problem-card">
+                        <div class="problem-icon" style="background: hsla(150, 100%, 40%, 0.2);">
+                            <i data-lucide="bar-chart-3" style="color: var(--secondary);"></i>
+                        </div>
+                        <h3 class="problem-title">Lecturer Dashboard</h3>
+                        <p class="problem-desc">Monitor punctuality, delivery rates, and engagement through calculated
+                            KPIs for every staff member.</p>
+                    </div>
+
+                    <div class="problem-card">
+                        <div class="problem-icon" style="background: hsla(280, 100%, 60%, 0.2);">
+                            <i data-lucide="file-text" style="color: var(--purple-500);"></i>
+                        </div>
+                        <h3 class="problem-title">Attendance Drill-down</h3>
+                        <p class="problem-desc">Generate deep-dive reports to distinguish between missed and completed
+                            sessions for audit compliance.</p>
+                    </div>
+
+                    <div class="problem-card">
+                        <div class="problem-icon" style="background: hsla(35, 100%, 50%, 0.2);">
+                            <i data-lucide="target" style="color: var(--accent);"></i>
+                        </div>
+                        <h3 class="problem-title">KPI Thresholds</h3>
+                        <p class="problem-desc">Set alerts for when performance metrics fall below institutional
+                            requirements.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="cta-bg"></div>
+            <div class="cta-glow"></div>
+            <div class="container">
+                <div class="cta-inner">
+                    <h2 class="cta-title">Refine Your <span class="gradient-text">Administration</span></h2>
+                    <p class="cta-subtitle">Empower your management team with the tools they need to succeed.</p>
+                    <div class="cta-buttons">
+                        <a href="index.html#contact" class="btn btn-hero btn-xl">Request Demo</a>
+                        <a href="index.html" class="btn btn-hero-outline btn-xl">Back to Ecosystem</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 VenueFY Ecosystem. Built by HovSaintBrandon.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-link"><i data-lucide="github"></i></a>
+                    <a href="#" class="social-link"><i data-lucide="twitter"></i></a>
+                    <a href="#" class="social-link"><i data-lucide="linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
